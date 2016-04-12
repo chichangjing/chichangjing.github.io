@@ -25,7 +25,7 @@ gavatar: /public/img/gavatar.png
 favicon: /public/img/favicon.png
 
 # 事例文件的根目录
-post_demo_basepath: "http://xh888.github.io/page_demo"
+#post_demo_basepath: "http://xh888.github.io/page_demo"
 
 # google analytics 设置
 # ga:

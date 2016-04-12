@@ -8,7 +8,7 @@ description:
 ---
 
 
-##1 Net-SNMP简介
+## 1 Net-SNMP简介
 Net-SNMP是一个免费的、开放源码的SNMP实现，以前称为UCD-SNMP。它包括agent和多个管理工具的源代码，支持多种扩展方式。不仅扩展了获取方式，而且对于数据类型也有一定的扩展。
 
 **阅读之前需要了解的知识：**
@@ -19,7 +19,7 @@ Net-SNMP是一个免费的、开放源码的SNMP实现，以前称为UCD-SNMP。
 + 熟悉make自动化工具的所用和阅读makefile代码的能力
 
 
-##2 开发私有mib库例子
+## 2 开发私有mib库例子
 用net-snmp扩展MIB库，实现方法可归结为四种：
 
 1. 一是静态库方式，通过修改配置头文件，在相应地方包含新引入的mib模块的.c和.h文件，然后重新编译库文件和扩展代码；这种方式不够灵活，每次修改扩展的MIB后，都需要重新编译snmpd和扩展的代码，再重新安装snmpd到系统中。
@@ -41,7 +41,7 @@ Net-SNMP是一个免费的、开放源码的SNMP实现，以前称为UCD-SNMP。
 
 创建相应的文件名，将这四个文件内容拷贝下来
 
-###2.1 加载mib文件
+### 2.1 加载mib文件
 
 使用net-snmp-config命令获取mib文件加载的默认目录
 
@@ -71,7 +71,7 @@ Net-SNMP是一个免费的、开放源码的SNMP实现，以前称为UCD-SNMP。
        |  +--......
        |  | 
 
-###2.2 Agent加载.so动态库
+### 2.2 Agent加载.so动态库
 我们编写的mib文件需要生成动态库，然后加载到Agent代理服务器上之后mib文件对于Agent其实已经没有用，上面加载mib模块只是对客服端而言。Net-SNMP提供的工具mib2c可以把NET-SNMP-TUTORIAL-MIB.txt文件里的具体变量生成对应的.c和.h文件。
 
     ccj@debian:~$ mib2c -c mib2c.scalar.conf nstAgentPluginObject
@@ -116,7 +116,13 @@ Net-SNMP是一个免费的、开放源码的SNMP实现，以前称为UCD-SNMP。
     /usr/local/etc/snmp:/usr/local/share/snmp:/usr/local/lib/snmp:/home/ccj/.snmp:/var/net-snmp
 
 从上面的结果可以发现有home/ccj/.snmp目录，其实把snmpd.conf和snmp.conf配置文件拷贝到上面任意一个目录应该都是可以的（笔者没有验证）。
-接下来可以通过一下命令确认动态库是否加载成功。
+接下来可以通过以下命令确认动态库是否加载成功。
 
     ccj@debian:~$ snmpwalk -v 2c -c public localhost nstAgentPluginObject
     NET-SNMP-TUTORIAL-MIB::nstAgentPluginObject.0 = INTEGER: 3
+
+### 2.3 trap告警配置
+在snmp.conf中配置以下条目
+
+	activeMonitoring trapsink 192.168.2.40:162 public
+	option authtrapenable   1
