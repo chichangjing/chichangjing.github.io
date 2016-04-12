@@ -1,0 +1,18 @@
+<meta charset="utf-8">
+<title>{{ page.title }} | {{ site.title }}</title>
+<meta name="author" content="{{ site.author.name }}">
+{% if page.keywords %}
+  <meta name="keywords" content="{{ page.keywords }}">
+{% endif %}
+{% if page.description  %}
+  <meta name="description " content="{{ page.description  }}">
+{% endif %}
+<link rel="shortcut icon" href="{{ site.favicon |prepend:site.baseurl}}" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{site.baseurl}}/public/css/bootstrap.css">
+<link rel="stylesheet" href="{{site.baseurl}}/public/css/font-awesome.css">
+<link rel="stylesheet" href="{{site.baseurl}}/public/js/prettify/prettify.css">
+<link rel="stylesheet" href="{{site.baseurl}}/public/css/base.css">
+<link href="{{site.baseurl}}/pages/atom.xml" rel="alternate" title="{{site.title}}" type="application/atom+xml">
+<script>var duoshuoQuery = {short_name:"{{site.duoshuo-short_name}}" };</script>
+<script charset="UTF-8" async="true" src="http://static.duoshuo.com/embed.js" type="text/javascript"></script>

@@ -1,0 +1,16 @@
+
+  /pages/about.html
+
+  /pages/archive.html
+
+  /pages/atom.xml
+
+  /index.html
+
+  /sitemap.txt
+
+
+
+  /2016/02/03/net-snmp-develop.html
+
+  /2012/05/01/Book-List-Computer1.html

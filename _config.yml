@@ -1,0 +1,53 @@
+permalink: /:year/:month/:day/:title.html
+paginate: 10
+markdown: kramdown
+timezone: Asia/Shanghai
+
+# 作者信息
+author: 
+  name: Jing's blog
+  email: 475060298@qq.com
+  # link: http://painterlin.com
+  weibo: http://t.qq.com/chichangjing1986
+  github: http://github.com/chichangjing
+  # music: http://site.douban.com/linanya
+  # linkedin: https://www.linkedin.com/pub/anya-lin/81/91/232
+
+# 站点信息
+title: Jing's blog
+description: My personal blog
+url: http://chichangjing.github.io
+rss_url: /pages/atom.xml
+#baseurl: "/blog"
+duoshuo-short_name: "kiwibird"
+# gavatar头像及Favicon
+gavatar: /public/img/gavatar.png
+favicon: /public/img/favicon.png
+
+# 事例文件的根目录
+post_demo_basepath: "http://xh888.github.io/page_demo"
+
+# google analytics 设置
+# ga:
+#   id: UA-54262064-1 
+#   url: painterlin.com
+
+# disqus 设置
+# disqus:
+#   shortname: painterlin
+
+# 主题设置，自动激活某个标签
+active: tags
+
+# 首页除了最新文章外显示分类
+# cates: 
+#   - Optimization
+#   - LaTeX
+
+# 中文本地化
+locals:
+  tags: 标签
+  about: 关于
+  newest: 最新文章
+  archive: 归档
+  index: 首页
