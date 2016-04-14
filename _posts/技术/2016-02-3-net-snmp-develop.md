@@ -16,7 +16,7 @@ Net-SNMP是一个免费的、开放源码的SNMP实现，以前称为UCD-SNMP。
 + 懂linux操作系统的使用
 + 了解snmp协议基本原理
 + Net-SNMP工具的使用
-+ 熟悉make自动化工具的所用和阅读makefile代码的能力
++ 熟悉make自动化工具的使用和阅读makefile代码的能力
 
 
 ## 2 开发私有mib库例子

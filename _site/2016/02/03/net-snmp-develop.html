@@ -16,7 +16,8 @@
 <link rel="stylesheet" href="/public/css/base.css">
 <link href="/pages/atom.xml" rel="alternate" title="Jing's blog" type="application/atom+xml">
 <script>var duoshuoQuery = {short_name:"kiwibird" };</script>
-<script charset="UTF-8" async="true" src="http://static.duoshuo.com/embed.js" type="text/javascript"></script>
+<script charset="UTF-8" async="true" src="http://static.duoshuo.com/embed.js" type="text/javascript">;</script>
+
 </head>
 <body>
   <div class="container">
@@ -253,10 +254,17 @@ com2sec mynetwork 192.168.1.0/24    public
 </code></pre>
 
 <p>从上面的结果可以发现有home/ccj/.snmp目录，其实把snmpd.conf和snmp.conf配置文件拷贝到上面任意一个目录应该都是可以的（笔者没有验证）。
-接下来可以通过一下命令确认动态库是否加载成功。</p>
+接下来可以通过以下命令确认动态库是否加载成功。</p>
 
 <pre><code>ccj@debian:~$ snmpwalk -v 2c -c public localhost nstAgentPluginObject
 NET-SNMP-TUTORIAL-MIB::nstAgentPluginObject.0 = INTEGER: 3
+</code></pre>
+
+<h3 id="trap">2.3 trap告警配置</h3>
+<p>在snmp.conf中配置以下条目</p>
+
+<pre><code>activeMonitoring trapsink 192.168.2.40:162 public
+option authtrapenable   1
 </code></pre>
 
     </div>
