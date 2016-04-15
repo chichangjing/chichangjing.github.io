@@ -5780,26 +5780,22 @@ a.list-group-item-danger.active:focus {
 }
 
 .panel-primary {
-    border-color: #f5f5f5;
+  border-color: #337ab7;
 }
-
-.panel-primary>.panel-heading {
-    color: #303030;
-    background-color: #f5f5f5;
-    border-color: #f5f5f5;
+.panel-primary > .panel-heading {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #337ab7;
 }
-
-.panel-primary>.panel-heading+.panel-collapse>.panel-body {
-    border-top-color: #428bca
+.panel-primary > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #337ab7;
 }
-
-.panel-primary>.panel-heading .badge {
-    color: #428bca;
-    background-color: #fff
+.panel-primary > .panel-heading .badge {
+  color: #337ab7;
+  background-color: #fff;
 }
-
-.panel-primary>.panel-footer+.panel-collapse>.panel-body {
-    border-bottom-color: #428bca
+.panel-primary > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #337ab7;
 }
 
 .panel-success {

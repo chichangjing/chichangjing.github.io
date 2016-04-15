@@ -132,7 +132,7 @@
   <div class="col-md-13 aside3-content">
     <hr>
     <div id="content">
-      <h2 id="net-snmp">1 Net-SNMP简介</h2>
+      <h3 id="net-snmp">1 Net-SNMP简介</h3>
 <p>Net-SNMP是一个免费的、开放源码的SNMP实现，以前称为UCD-SNMP。它包括agent和多个管理工具的源代码，支持多种扩展方式。不仅扩展了获取方式，而且对于数据类型也有一定的扩展。</p>
 
 <p><strong>阅读之前需要了解的知识：</strong></p>
@@ -141,10 +141,10 @@
   <li>懂linux操作系统的使用</li>
   <li>了解snmp协议基本原理</li>
   <li>Net-SNMP工具的使用</li>
-  <li>熟悉make自动化工具的所用和阅读makefile代码的能力</li>
+  <li>熟悉make自动化工具的使用和阅读makefile代码的能力</li>
 </ul>
 
-<h2 id="mib">2 开发私有mib库例子</h2>
+<h3 id="mib">2 开发私有mib库例子</h3>
 <p>用net-snmp扩展MIB库，实现方法可归结为四种：</p>
 
 <ol>
@@ -170,7 +170,7 @@
 
 <p>创建相应的文件名，将这四个文件内容拷贝下来</p>
 
-<h3 id="mib-1">2.1 加载mib文件</h3>
+<h4 id="mib-1">2.1 加载mib文件</h4>
 
 <p>使用net-snmp-config命令获取mib文件加载的默认目录</p>
 
@@ -202,7 +202,7 @@
    |  | 
 </code></pre>
 
-<h3 id="agentso">2.2 Agent加载.so动态库</h3>
+<h4 id="agentso">2.2 Agent加载.so动态库</h4>
 <p>我们编写的mib文件需要生成动态库，然后加载到Agent代理服务器上之后mib文件对于Agent其实已经没有用，上面加载mib模块只是对客服端而言。Net-SNMP提供的工具mib2c可以把NET-SNMP-TUTORIAL-MIB.txt文件里的具体变量生成对应的.c和.h文件。</p>
 
 <pre><code>ccj@debian:~$ mib2c -c mib2c.scalar.conf nstAgentPluginObject
@@ -260,11 +260,11 @@ com2sec mynetwork 192.168.1.0/24    public
 NET-SNMP-TUTORIAL-MIB::nstAgentPluginObject.0 = INTEGER: 3
 </code></pre>
 
-<h3 id="trap">2.3 trap告警配置</h3>
+<h4 id="trap">2.3 trap告警配置</h4>
 <p>在snmp.conf中配置以下条目</p>
 
-<pre><code>activeMonitoring trapsink 192.168.2.40:162 public
-option authtrapenable   1
+<pre><code>trapsink 192.168.2.40:162 public
+authtrapenable   1
 </code></pre>
 
     </div>
